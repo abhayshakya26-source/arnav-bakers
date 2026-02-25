@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arnav Bakers | 100% Eggless Cakes</title>
 
-<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -18,7 +17,7 @@ body{
   overflow-x:hidden;
 }
 
-/* PARTICLE BACKGROUND */
+/* PARTICLES */
 .particles{
   position:fixed;
   inset:0;
@@ -55,7 +54,6 @@ header{
   background:linear-gradient(45deg,#e91e63,#ff9800);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-shadow:2px 2px 10px rgba(233,30,99,0.3);
 }
 .menu-icon{font-size:26px;cursor:pointer}
 .menu{
@@ -77,32 +75,16 @@ header{
 
 /* SECTIONS */
 section{padding:60px 20px;text-align:center}
-h2{
+h2,h3{
   font-family:'Playfair Display',serif;
-  font-size:42px;
-  color:#e91e63;
-}
-h3{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
   color:#e91e63;
 }
 
-/* HERO TEXT */
-.hero-text{
-  max-width:900px;
-  margin:auto;
-}
-.hero-text p{
-  font-size:18px;
-  line-height:1.6;
-}
-.hero-text span{
-  color:#009688;
-  font-weight:700;
-}
+/* HERO */
+.hero-text{max-width:900px;margin:auto}
+.hero-text p{font-size:18px}
+.hero-text span{color:#009688;font-weight:700}
 
-/* ORDER BUTTON */
 .order-btn{
   margin:25px 0;
   padding:14px 35px;
@@ -113,9 +95,8 @@ h3{
   border-radius:30px;
   cursor:pointer;
 }
-.order-btn:hover{background:#d81b60}
 
-/* CAKES */
+/* IMAGES */
 .cakes{
   display:flex;
   justify-content:center;
@@ -145,15 +126,14 @@ iframe{
   height:300px;
   border-radius:15px;
   border:none;
-  margin-top:20px;
 }
 
 /* FOOTER */
 footer{
   background:#000;
   color:#fff;
+  padding:30px;
   text-align:center;
-  padding:40px 20px;
 }
 
 /* WHATSAPP */
@@ -166,8 +146,6 @@ footer{
   font-size:30px;
   padding:15px 18px;
   border-radius:50%;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  z-index:200;
 }
 </style>
 
@@ -187,6 +165,7 @@ function toggleMenu(){
   <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
   <div class="menu" id="menu">
     <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
     <a href="#categories">Our Categories</a>
     <a href="#contact">Contact</a>
   </div>
@@ -200,16 +179,24 @@ function toggleMenu(){
       Birthday ho ya anniversary — har mauke ke liye fresh, tasty aur beautiful cakes.  
       Farrukhabad me nearby area ke liye <span>FREE DELIVERY</span>.
     </p>
-
-    <button class="order-btn" onclick="window.open('https://wa.me/918960128970')">
-      Order Now
-    </button>
+    <button class="order-btn" onclick="window.open('https://wa.me/918960128970')">Order Now</button>
   </div>
 
   <div class="cakes">
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
-    <img src="https://images.unsplash.com/photo-1605478033286-7c1d3bb2f0f7">
-    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7">
+    <img src="arnav-bakers-site/cake1.jpg">
+    <img src="arnav-bakers-site/cake2.jpg">
+    <img src="arnav-bakers-site/cake3.jpg">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h3>Our Gallery</h3>
+  <div class="cakes">
+    <img src="arnav-bakers-site/cake1.jpg">
+    <img src="arnav-bakers-site/cake2.jpg">
+    <img src="arnav-bakers-site/cake3.jpg">
+    <img src="arnav-bakers-site/cake4.jpg">
   </div>
 </section>
 
@@ -217,15 +204,15 @@ function toggleMenu(){
 <section id="categories">
   <h3>Our Categories</h3>
   <ul class="category">
-    <li>Pineapple Cake, Vanilla Cake, Butterscotch Cake</li>
-    <li>Chocolate Cake, Dark Chocolate Cake, Red Velvet Cake</li>
-    <li>Birthday Cake & Anniversary Cake</li>
-    <li>Special Customised Cakes</li>
+    <li>Pineapple, Vanilla, Butterscotch</li>
+    <li>Chocolate, Dark Chocolate, Red Velvet</li>
+    <li>Birthday & Anniversary Cakes</li>
+    <li>Customised Cakes</li>
     <li>Pastry • Patties • Cream Roll • Bun</li>
   </ul>
 </section>
 
-<!-- WHY CHOOSE -->
+<!-- WHY -->
 <section>
   <h3>Why Choose Arnav Bakers?</h3>
   <p>
@@ -235,18 +222,17 @@ function toggleMenu(){
   </p>
 </section>
 
-<!-- MAP + CONTACT -->
+<!-- LOCATION -->
 <section id="contact">
   <h3>Our Location</h3>
-  <iframe src="https://maps.google.com/maps?q=farrukhabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-
+  <iframe src="https://www.google.com/maps?q=MYWYi9FvWveMrNL88&output=embed"></iframe>
   <p style="margin-top:20px;font-size:18px;">
     📞 9305465646 | 8052028941
   </p>
 </section>
 
 <footer>
-  <p>© 2026 Arnav Bakers | Farrukhabad</p>
+  © 2026 Arnav Bakers | Farrukhabad
 </footer>
 
 <a href="https://wa.me/918960128970" class="whatsapp" target="_blank">
