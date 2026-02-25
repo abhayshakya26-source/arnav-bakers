@@ -3,15 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnav Bakers | 100% Eggless Cakes</title>
+<title>Arnav Bakers | Premium Eggless Cakes</title>
 
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(120deg,#fff0f5,#ffffff);
+  background:#fff;
+  overflow-x:hidden;
+}
+
+/* PARTICLE BACKGROUND */
+.particles{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 10% 20%, #ffd1dc 2px, transparent 3px),
+    radial-gradient(circle at 80% 30%, #ffe4b5 3px, transparent 4px),
+    radial-gradient(circle at 50% 70%, #ffb6c1 2px, transparent 3px);
+  background-size:200px 200px;
+  animation:move 20s linear infinite;
+}
+@keyframes move{
+  from{background-position:0 0}
+  to{background-position:400px 400px}
 }
 
 /* HEADER */
@@ -21,60 +43,52 @@ header{
   align-items:center;
   padding:15px 25px;
   background:#fff;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  box-shadow:0 4px 20px rgba(0,0,0,0.1);
   position:sticky;
   top:0;
   z-index:100;
 }
-
-/* LOGO TEXT */
 .brand{
-  font-size:36px;
+  font-family:'Playfair Display',serif;
+  font-size:44px;
   font-weight:900;
-  color:#e91e63;
-  letter-spacing:2px;
+  letter-spacing:3px;
+  background:linear-gradient(45deg,#e91e63,#ff9800);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:2px 2px 10px rgba(233,30,99,0.3);
 }
-
-/* HAMBURGER */
-.menu-icon{
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* MENU */
+.menu-icon{font-size:26px;cursor:pointer}
 .menu{
   position:absolute;
-  top:70px;
-  right:20px;
+  top:75px;right:20px;
   background:#fff;
-  border-radius:10px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
   display:none;
-  overflow:hidden;
 }
 .menu a{
   display:block;
-  padding:12px 20px;
+  padding:14px 25px;
   text-decoration:none;
   color:#333;
   font-weight:600;
 }
-.menu a:hover{
-  background:#ffe4ec;
-}
+.menu a:hover{background:#ffe4ec;color:#e91e63}
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:60px 20px;
-}
-.hero h2{
-  font-size:40px;
-  color:#e91e63;
-  margin-bottom:10px;
-}
-.hero p{
+.hero{text-align:center;padding:80px 20px}
+.hero h2{font-size:42px;color:#e91e63}
+.hero p{font-size:18px}
+.hero .order{
+  margin-top:25px;
+  padding:14px 30px;
   font-size:18px;
+  background:#e91e63;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
 }
 
 /* CAKES */
@@ -82,13 +96,39 @@ header{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  margin-top:30px;
+  margin-top:40px;
 }
 .cakes img{
-  width:250px;
+  width:260px;
   margin:12px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  transition:.3s;
+}
+.cakes img:hover{transform:scale(1.07)}
+
+/* SECTIONS */
+section{padding:60px 20px;text-align:center}
+h3{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  color:#e91e63;
+}
+
+/* CATEGORY */
+.category li{
+  list-style:none;
+  font-size:18px;
+  padding:6px;
+}
+
+/* MAP */
+iframe{
+  width:100%;
+  max-width:700px;
+  height:300px;
   border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  border:none;
 }
 
 /* FOOTER */
@@ -96,10 +136,7 @@ footer{
   background:#000;
   color:#fff;
   text-align:center;
-  padding:40px 20px;
-}
-footer h3{
-  color:#e91e63;
+  padding:50px 20px;
 }
 
 /* WHATSAPP */
@@ -119,29 +156,75 @@ footer h3{
 
 <script>
 function toggleMenu(){
-  var menu=document.getElementById("menu");
-  menu.style.display = menu.style.display==="block" ? "none":"block";
+  let m=document.getElementById("menu");
+  m.style.display=m.style.display==="block"?"none":"block";
 }
 </script>
-
 </head>
+
 <body>
+<div class="particles"></div>
 
 <header>
   <div class="brand">ARNAV BAKERS</div>
-
-  <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-
+  <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
   <div class="menu" id="menu">
     <a href="#home">Home</a>
-    <a href="#contact">Contact Us</a>
-    <a href="#categories">Our Categories</a>
     <a href="#gallery">Gallery</a>
+    <a href="#categories">Categories</a>
+    <a href="#contact">Contact</a>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="home">
-  <h2>100% Eggless
+  <h2>100% Pure Eggless Cake</h2>
+  <p>Fresh • Tasty • Beautiful Cakes for Every Occasion</p>
+  <button class="order" onclick="window.open('https://wa.me/918960128970')">Order Now</button>
+
+  <div class="cakes">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+    <img src="https://images.unsplash.com/photo-1605478033286-7c1d3bb2f0f7">
+    <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7">
+  </div>
+</section>
+
+<section id="gallery">
+  <h3>Gallery</h3>
+  <div class="cakes">
+    <img src="https://images.unsplash.com/photo-1586985288123-2495f577af68">
+    <img src="https://images.unsplash.com/photo-1542826438-8bfa06f5f8b9">
+    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2">
+  </div>
+</section>
+
+<section id="categories">
+  <h3>Our Categories</h3>
+  <ul class="category">
+    <li>Pineapple, Vanilla, Butterscotch</li>
+    <li>Chocolate, Dark Chocolate, Red Velvet</li>
+    <li>Birthday & Anniversary Cakes</li>
+    <li>Customised Cakes</li>
+    <li>Pastry • Patties • Cream Roll • Bun</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h3>Find Us</h3>
+  <iframe src="https://maps.google.com/maps?q=farrukhabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<footer>
+  <h3>Why Choose Arnav Bakers?</h3>
+  <p>
+    100% Eggless • Fresh Ingredients • Hygienic • FREE DELIVERY<br><br>
+    📞 9305465646 | 8052028941<br>
+    📍 Farrukhabad
+  </p>
+</footer>
+
+<a href="https://wa.me/918960128970" class="whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
