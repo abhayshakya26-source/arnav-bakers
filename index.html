@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnav Bakers | Premium Eggless Cakes</title>
+<title>Arnav Bakers | 100% Eggless Cakes</title>
 
 <!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -21,8 +21,7 @@ body{
 /* PARTICLE BACKGROUND */
 .particles{
   position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
+  inset:0;
   z-index:-1;
   background:
     radial-gradient(circle at 10% 20%, #ffd1dc 2px, transparent 3px),
@@ -76,13 +75,37 @@ header{
 }
 .menu a:hover{background:#ffe4ec;color:#e91e63}
 
-/* HERO */
-.hero{text-align:center;padding:80px 20px}
-.hero h2{font-size:42px;color:#e91e63}
-.hero p{font-size:18px}
-.hero .order{
-  margin-top:25px;
-  padding:14px 30px;
+/* SECTIONS */
+section{padding:60px 20px;text-align:center}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:#e91e63;
+}
+h3{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  color:#e91e63;
+}
+
+/* HERO TEXT */
+.hero-text{
+  max-width:900px;
+  margin:auto;
+}
+.hero-text p{
+  font-size:18px;
+  line-height:1.6;
+}
+.hero-text span{
+  color:#009688;
+  font-weight:700;
+}
+
+/* ORDER BUTTON */
+.order-btn{
+  margin:25px 0;
+  padding:14px 35px;
   font-size:18px;
   background:#e91e63;
   color:#fff;
@@ -90,13 +113,14 @@ header{
   border-radius:30px;
   cursor:pointer;
 }
+.order-btn:hover{background:#d81b60}
 
 /* CAKES */
 .cakes{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  margin-top:40px;
+  margin-top:30px;
 }
 .cakes img{
   width:260px;
@@ -106,14 +130,6 @@ header{
   transition:.3s;
 }
 .cakes img:hover{transform:scale(1.07)}
-
-/* SECTIONS */
-section{padding:60px 20px;text-align:center}
-h3{
-  font-family:'Playfair Display',serif;
-  font-size:32px;
-  color:#e91e63;
-}
 
 /* CATEGORY */
 .category li{
@@ -129,6 +145,7 @@ iframe{
   height:300px;
   border-radius:15px;
   border:none;
+  margin-top:20px;
 }
 
 /* FOOTER */
@@ -136,7 +153,7 @@ footer{
   background:#000;
   color:#fff;
   text-align:center;
-  padding:50px 20px;
+  padding:40px 20px;
 }
 
 /* WHATSAPP */
@@ -170,16 +187,24 @@ function toggleMenu(){
   <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
   <div class="menu" id="menu">
     <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#categories">Categories</a>
+    <a href="#categories">Our Categories</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
 
-<section class="hero" id="home">
-  <h2>100% Pure Eggless Cake</h2>
-  <p>Fresh • Tasty • Beautiful Cakes for Every Occasion</p>
-  <button class="order" onclick="window.open('https://wa.me/918960128970')">Order Now</button>
+<!-- HERO -->
+<section id="home">
+  <div class="hero-text">
+    <h2>100% Pure Eggless Cake</h2>
+    <p>
+      Birthday ho ya anniversary — har mauke ke liye fresh, tasty aur beautiful cakes.  
+      Farrukhabad me nearby area ke liye <span>FREE DELIVERY</span>.
+    </p>
+
+    <button class="order-btn" onclick="window.open('https://wa.me/918960128970')">
+      Order Now
+    </button>
+  </div>
 
   <div class="cakes">
     <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
@@ -188,38 +213,40 @@ function toggleMenu(){
   </div>
 </section>
 
-<section id="gallery">
-  <h3>Gallery</h3>
-  <div class="cakes">
-    <img src="https://images.unsplash.com/photo-1586985288123-2495f577af68">
-    <img src="https://images.unsplash.com/photo-1542826438-8bfa06f5f8b9">
-    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2">
-  </div>
-</section>
-
+<!-- CATEGORIES -->
 <section id="categories">
   <h3>Our Categories</h3>
   <ul class="category">
-    <li>Pineapple, Vanilla, Butterscotch</li>
-    <li>Chocolate, Dark Chocolate, Red Velvet</li>
-    <li>Birthday & Anniversary Cakes</li>
-    <li>Customised Cakes</li>
+    <li>Pineapple Cake, Vanilla Cake, Butterscotch Cake</li>
+    <li>Chocolate Cake, Dark Chocolate Cake, Red Velvet Cake</li>
+    <li>Birthday Cake & Anniversary Cake</li>
+    <li>Special Customised Cakes</li>
     <li>Pastry • Patties • Cream Roll • Bun</li>
   </ul>
 </section>
 
+<!-- WHY CHOOSE -->
+<section>
+  <h3>Why Choose Arnav Bakers?</h3>
+  <p>
+    Hum sirf 100% Eggless Cakes banate hain — fresh ingredients, hygienic preparation  
+    aur nearby area me FREE DELIVERY.  
+    Isliye customers hume trust karte hain aur bar-bar order dete hain.
+  </p>
+</section>
+
+<!-- MAP + CONTACT -->
 <section id="contact">
-  <h3>Find Us</h3>
+  <h3>Our Location</h3>
   <iframe src="https://maps.google.com/maps?q=farrukhabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+  <p style="margin-top:20px;font-size:18px;">
+    📞 9305465646 | 8052028941
+  </p>
 </section>
 
 <footer>
-  <h3>Why Choose Arnav Bakers?</h3>
-  <p>
-    100% Eggless • Fresh Ingredients • Hygienic • FREE DELIVERY<br><br>
-    📞 9305465646 | 8052028941<br>
-    📍 Farrukhabad
-  </p>
+  <p>© 2026 Arnav Bakers | Farrukhabad</p>
 </footer>
 
 <a href="https://wa.me/918960128970" class="whatsapp" target="_blank">
