@@ -3,240 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arnav Bakers | 100% Eggless Cakes</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Arnav Bakers</title>
 
 <style>
-*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#fff;
-  overflow-x:hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* PARTICLES */
-.particles{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  background:
-    radial-gradient(circle at 10% 20%, #ffd1dc 2px, transparent 3px),
-    radial-gradient(circle at 80% 30%, #ffe4b5 3px, transparent 4px),
-    radial-gradient(circle at 50% 70%, #ffb6c1 2px, transparent 3px);
-  background-size:200px 200px;
-  animation:move 20s linear infinite;
-}
-@keyframes move{
-  from{background-position:0 0}
-  to{background-position:400px 400px}
-}
-
-/* HEADER */
+/* ===== Header ===== */
 header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 25px;
-  background:#fff;
-  box-shadow:0 4px 20px rgba(0,0,0,0.1);
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-.brand{
-  font-family:'Playfair Display',serif;
-  font-size:44px;
-  font-weight:900;
-  letter-spacing:3px;
-  background:linear-gradient(45deg,#e91e63,#ff9800);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.menu-icon{font-size:26px;cursor:pointer}
-.menu{
-  position:absolute;
-  top:75px;right:20px;
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  display:none;
-}
-.menu a{
-  display:block;
-  padding:14px 25px;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-}
-.menu a:hover{background:#ffe4ec;color:#e91e63}
-
-/* SECTIONS */
-section{padding:60px 20px;text-align:center}
-h2,h3{
-  font-family:'Playfair Display',serif;
-  color:#e91e63;
-}
-
-/* HERO */
-.hero-text{max-width:900px;margin:auto}
-.hero-text p{font-size:18px}
-.hero-text span{color:#009688;font-weight:700}
-
-.order-btn{
-  margin:25px 0;
-  padding:14px 35px;
-  font-size:18px;
-  background:#e91e63;
+  background:#ff6f91;
   color:#fff;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-}
-
-/* IMAGES */
-.cakes{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-.cakes img{
-  width:260px;
-  margin:12px;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-  transition:.3s;
-}
-.cakes img:hover{transform:scale(1.07)}
-
-/* CATEGORY */
-.category li{
-  list-style:none;
-  font-size:18px;
-  padding:6px;
-}
-
-/* MAP */
-iframe{
-  width:100%;
-  max-width:700px;
-  height:300px;
-  border-radius:15px;
-  border:none;
-}
-
-/* FOOTER */
-footer{
-  background:#000;
-  color:#fff;
-  padding:30px;
+  padding:20px;
   text-align:center;
 }
 
-/* WHATSAPP */
-.whatsapp{
+/* ===== Categories ===== */
+#categories{
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* (Images removed as requested) */
+
+/* ===== Gallery ===== */
+.gallery{
+  padding:50px 20px;
+  background:#fff5f7;
+  text-align:center;
+}
+
+.gallery h2{
+  color:#d6336c;
+  margin-bottom:30px;
+}
+
+.gallery-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.gallery-container img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+  transition:0.4s;
+}
+
+.gallery-container img:hover{
+  transform:scale(1.08);
+}
+
+/* ===== Location ===== */
+#location{
+  padding:50px 20px;
+  text-align:center;
+}
+
+#location h2{
+  color:#d6336c;
+  margin-bottom:20px;
+}
+
+/* ===== WhatsApp Button ===== */
+.whatsapp-float{
   position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:#fff;
-  font-size:30px;
-  padding:15px 18px;
+  bottom:25px;
+  right:25px;
+  width:65px;
+  height:65px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
   border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  animation:pulse 1.8s infinite;
+  z-index:1000;
+}
+
+.whatsapp-float img{
+  width:35px;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.12);}
+  100%{transform:scale(1);}
 }
 </style>
-
-<script>
-function toggleMenu(){
-  let m=document.getElementById("menu");
-  m.style.display=m.style.display==="block"?"none":"block";
-}
-</script>
 </head>
 
 <body>
-<div class="particles"></div>
 
 <header>
-  <div class="brand">ARNAV BAKERS</div>
-  <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-  <div class="menu" id="menu">
-    <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#categories">Our Categories</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <h1>Arnav Bakers</h1>
+  <p>100% Pure Eggless Cake</p>
 </header>
 
-<!-- HERO -->
-<section id="home">
-  <div class="hero-text">
-    <h2>100% Pure Eggless Cake</h2>
-    <p>
-      Birthday ho ya anniversary — har mauke ke liye fresh, tasty aur beautiful cakes.  
-      Farrukhabad me nearby area ke liye <span>FREE DELIVERY</span>.
-    </p>
-    <button class="order-btn" onclick="window.open('https://wa.me/918960128970')">Order Now</button>
-  </div>
-
-  <div class="cakes">
-    <img src="arnav-bakers-site/cake1.jpg">
-    <img src="arnav-bakers-site/cake2.jpg">
-    <img src="arnav-bakers-site/cake3.jpg">
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <h3>Our Gallery</h3>
-  <div class="cakes">
-    <img src="arnav-bakers-site/cake1.jpg">
-    <img src="arnav-bakers-site/cake2.jpg">
-    <img src="arnav-bakers-site/cake3.jpg">
-    <img src="arnav-bakers-site/cake4.jpg">
-  </div>
-</section>
-
-<!-- CATEGORIES -->
+<!-- ===== Categories Section ===== -->
 <section id="categories">
-  <h3>Our Categories</h3>
-  <ul class="category">
-    <li>Pineapple, Vanilla, Butterscotch</li>
-    <li>Chocolate, Dark Chocolate, Red Velvet</li>
-    <li>Birthday & Anniversary Cakes</li>
-    <li>Customised Cakes</li>
-    <li>Pastry • Patties • Cream Roll • Bun</li>
-  </ul>
+  <h2>Our Categories</h2>
+  <p>Fresh • Eggless • Delicious Cakes</p>
 </section>
 
-<!-- WHY -->
-<section>
-  <h3>Why Choose Arnav Bakers?</h3>
-  <p>
-    Hum sirf 100% Eggless Cakes banate hain — fresh ingredients, hygienic preparation  
-    aur nearby area me FREE DELIVERY.  
-    Isliye customers hume trust karte hain aur bar-bar order dete hain.
-  </p>
+<!-- ===== Gallery Section ===== -->
+<section id="gallery" class="gallery">
+  <h2>Our Cakes Gallery</h2>
+
+  <div class="gallery-container">
+    <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa" alt="Pineapple Cake">
+    <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62" alt="Butterscotch Cake">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Chocolate Cake">
+    <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f" alt="Vanilla Cake">
+    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713" alt="Strawberry Cake">
+    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729" alt="Anniversary Cake">
+    <img src="https://images.unsplash.com/photo-1623334044303-241021148842" alt="Cartoon Cake">
+  </div>
 </section>
 
-<!-- LOCATION -->
-<section id="contact">
-  <h3>Our Location</h3>
-  <iframe src="https://www.google.com/maps?q=MYWYi9FvWveMrNL88&output=embed"></iframe>
-  <p style="margin-top:20px;font-size:18px;">
-    📞 9305465646 | 8052028941
-  </p>
+<!-- ===== Location Section ===== -->
+<section id="location">
+  <h2>Visit Arnav Bakers</h2>
+
+  <iframe 
+    src="https://www.google.com/maps?q=Arnav%20Bakers&output=embed"
+    width="100%"
+    height="350"
+    style="border-radius:15px;border:0;"
+    loading="lazy">
+  </iframe>
 </section>
 
-<footer>
-  © 2026 Arnav Bakers | Farrukhabad
-</footer>
-
-<a href="https://wa.me/918960128970" class="whatsapp" target="_blank">
-  <i class="fab fa-whatsapp"></i>
+<!-- ===== WhatsApp Floating Button ===== -->
+<a href="https://wa.me/918960128970" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
 </body>
